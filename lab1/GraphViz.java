@@ -28,7 +28,22 @@ public class GraphViz
    public GraphViz() {
    }
 /**
-   
+    * Returns the graph's source description in dot language.
+    * @return Source of the graph in dot language.
+    */
+   public String getDotSource() {
+      return graph.toString();
+   }
+/**
+    * Adds a string to the graph's source (without newline).
+    */
+   public void add(String line) {
+      graph.append(line);
+   }
+/**
+    * Adds a string to the graph's source (with newline).
+    */
+   public void addln(String line) {
       graph.append(line + "\n");
    }
 /**
