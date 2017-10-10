@@ -227,48 +227,7 @@ class digraph implements lab
     }
     
     //展示最短路径
-    public void showShortestRoute(digraph G, String route)//展示有向图
-    {
-    	String []routes=route.split("->");
-    	int flag;
-    	GraphViz gv = new GraphViz();
-        gv.addln(gv.start_graph());
-        int index=G.GetLength();
-        for(int i=0;i<index;i++)
-        {
-        	for(int j=0;j<index;j++)
-        	{
-        		if(G.list[i][j]>0)
-        		{
-        			//System.out.println(G.list[i][j]);
-        		    
-        		    flag=0;
-        		    for(int k=0;k<routes.length-1;k++)
-        		    {
-        		    	if(G.refrence[i].equals(routes[k])&&G.refrence[j].equals(routes[k+1]))
-        		    	{
-        		    		 gv.addln(G.refrence[i]+"->"+G.refrence[j]+"[label=\""+G.list[i][j]+"\",style=\"dashed\"];");
-        		    		 flag=1;
-        		    		 break;
-        		    	}
-        		    }
-        		    if(flag==0)
-        		    {
-        		    	 gv.addln(G.refrence[i]+"->"+G.refrence[j]+"[label=\""+G.list[i][j]+"\"];");
-        		    }
-        		    
-        		}
-        	}
-        }
-        
-        gv.addln(gv.end_graph());
-     //   System.out.println(gv.getDotSource());
-        
-        String type = "gif";
-        File out = new File("D:/graphviz2.38/workspace/out2."+type);
-        gv.writeGraphToFile( gv.getGraph( gv.getDotSource(), type ), out );
-    }
-    
+  
     public String calcShortestPath(digraph G, String word1, String word2)//计算两个单词之间的最短路径 
     {
     	int num=G.GetLength();
