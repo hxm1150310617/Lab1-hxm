@@ -111,23 +111,7 @@ class digraph implements lab
     	  }
        return this;  
 	}
-	public void printdigraph(digraph G)//测试输出
-	{
-		/*输出测试区*/
-		int index=G.GetLength();
-		System.out.println(index);
-		   for(int z=0;z<index;z++)
-		   { System.out.print("\""+G.refrence[z]+"\""+' ');}
-		     System.out.print('\n');
-		     for (int x=0;x<index;x++)
-		     {
-			   for(int y=0;y<index;y++)
-			   {
-				   System.out.print(G.list[x][y]+" ");
-			   }
-			   System.out.println("\n");
-		    }    		      		    
-    }
+	
 	
 	public String queryBridgeWords(digraph G, String word1, String word2)// 查询桥接词
 	{
@@ -380,19 +364,7 @@ public class Lab1 {
         	{
         		System.out.print(result+" ");//当得到有效输出时，输出字符}
         		} }
-       /* while(!result.equals("end")&&!strin.equals("No"))//未出现结束标志时
-        {    result=nl.randomWalk(nl);
-             if(!strin.equals("Yes")&&!strin.equals("No"))
-             {
-            	 System.out.println("Wrong inputs!");
-            	 break;
-             }        
-        	if(!result.equals("continue")&&!result.equals("end")&&strin.equals("Yes")) 
-        	{
-        		System.out.print(result+" \n");//当得到有效输出时，输出字符}
-        		System.out.println("Would you like to continue ?(inout Yes to continue, No to stop)");
-        		strin=input.next();}        		             
-        }*/
+      
         System.out.println("\nComplete random walk!");
         System.out.println("**********************************************");
         /*根据bridgewords生成新文本*/
